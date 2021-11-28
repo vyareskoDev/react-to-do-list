@@ -11,20 +11,20 @@ function App() {
     const delTask = (id) => {
         setTasks(tasks.filter(task => task.id !== id))
     }
-    //toggle task    reminder
+    //toggle task reminder
     const toggleReminder = (id) => {
-        setTasks(tasks.map(task => task.id === id ? { ...task, reminder: !task.reminder } : task))
+        setTasks(tasks.map(task => task.id === id ? { ...task, taskReminder: !task.taskReminder } : task))
     }
     //add new task
-
     const addTask = (task) => {
         const id = tasks?.at(-1)?.id + 1 || 1
         const newTask = { id, ...task }
         setTasks([...tasks, newTask])
     }
+
     return (
         <div className="container">
-            <Header showForm={showForm} onAdd={() => setShowForm(!showForm)} />
+            <Header isActiveTasks={tasks.length > 0} showForm={showForm} onToggle={toggleReminder} onAdd={() => setShowForm(!showForm)} />
             {showForm &&
                 <AddTask onAdd={addTask} />
             }

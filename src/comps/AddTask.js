@@ -15,13 +15,7 @@ const AddTask = ({ onAdd }) => {
             setShowError(true)
             setTimeout(() => setShowError(false), 5000)
         }
-        if (!taskDate) {
-            setErrorMessage("Please, enter the date in format day/month/year")
-            setShowError(true)
-            setTimeout(() => setShowError(false), 5000)
-        }
         let task = { taskText, taskDate, taskReminder }
-        console.log(task)
         onAdd(task)
     }
     return (

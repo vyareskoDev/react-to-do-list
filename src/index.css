@@ -45,7 +45,7 @@ body {
 
 .btn {
   display: inline-block;
-  background: #000;
+  background: #4D4853;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -161,4 +161,15 @@ footer {
     border-radius: .5rem;
     background-color: #f05131a9;
     color: white;
+}
+.task-icons {
+    display: flex;
+    float: right;
+    width: 50%;
+    height: 50%;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.task-icon {
+    margin: 1rem;
 }
